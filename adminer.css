@@ -589,6 +589,95 @@ pre {
     background: var(--muted);
 }
 
+/* ---------- login card ---------- */
+
+form:has(> table.layout) {
+    width: fit-content;
+    max-width: 100%;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+}
+
+table.layout {
+    width: 24rem;
+    table-layout: fixed;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.04);
+}
+
+table.layout th {
+    width: 7.5rem;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+table.layout td {
+    width: auto;
+}
+
+table.layout input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+table.layout select {
+    width: 100%;
+}
+
+form:has(> table.layout) > p {
+    margin: 0.75rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+form:has(> table.layout) label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 13px;
+    color: var(--muted-foreground);
+}
+
+/* ---------- SQL editor & syntax ---------- */
+
+#content > form {
+    margin-block-start: 1.5rem;
+}
+
+.sqlarea,
+pre.jush[contenteditable] {
+    font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 0.75rem 0.875rem !important; /* jush.js sets inline padding */
+    min-height: 14rem;
+    border-color: var(--border);
+    border-radius: var(--radius);
+    background: var(--background);
+}
+
+.jush {
+    --text-color: #09090b;
+    --bg-color: #ffffff;
+    --border-color: #e4e4e7;
+    --php-color: #18181b;
+    --php-bg-color: transparent;
+    --string-color: #166534;
+    --string-plain-color: #166534;
+    --keyword-color: #7c3aed;
+    --attribute-color: #0369a1;
+    --value-color: #0369a1;
+    --number-color: #b45309;
+    --identifier-color: #09090b;
+}
+
+.sql-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-block: 0.75rem 2.5rem;
+}
+
 /* mobile menu card */
 @media all and (max-width: 800px) {
     #menu {
